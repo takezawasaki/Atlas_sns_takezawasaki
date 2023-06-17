@@ -1,22 +1,133 @@
 @charset "utf-8";
-html{
+
+html {
+    font-size: 20px;
 }
-body{
+
+body {
+    font-size: 1rem;
+    font-family: "YuGothic", Yu Gothic, sans-serif;
 }
+
 /* header */
-header{
-    background:#186AC9;
+header {
+    padding: 10px;
+    background: #186AC9;
+
+}
+
+h1 {
+    padding: 20px;
+}
+
+img {
+    size: 60px 70px;
+}
+
+p {
+    color: #f7ecf1;
+
 }
 
 /* main content */
-#row{
+#head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+}
+
+.side_user {
+    display: flex;
+    justify-content: center;
+}
+
+/* #head {
+    align-items: center;
+    position: relative;
+} */
+
+#row {
     display: flex;
     flex-flow: row wrap;
 }
-#container{
+
+#container {
     flex: 0 0 80%;
 }
-#side-bar{
+
+#side-bar {
     flex: 0 0 19%;
     border-left: 1px solid #727272;
 }
+
+/* アコーディオンメニュー */
+.accordion-container {
+    display: flex;
+    position: relative;
+    border-top: none;
+    outline: 0;
+    cursor: pointer;
+}
+
+/* .accordion-container .accordion-title {
+    display: flex;
+    position: absolute;
+    font-size: 1.25rem;
+    font-weight: normal;
+    color: #fff;
+    width: 50px;
+    height: 17px;
+    padding-left: 50px;
+} */
+
+.accordion-title {
+    display: flex;
+    position: absolute;
+}
+
+.accordion-title::after {
+    content: "";
+    right: 40px;
+    position: absolute;
+    top: 3%;
+    width: 8px;
+    height: 8px;
+    border-top: solid 2px #fff;
+}
+
+/* display: block; */
+
+
+
+/* a:hover {
+    color: #186AC9;
+} */
+
+/* .menu {
+    position: absolute;
+    top: 51px;
+    width: 20px;
+    height: 80px;
+    background-color: #fff;
+    opacity: 0;
+    transition: .3s;
+    pointer-events: none;
+    transform: translateY(-30px);
+    padding: 10px 10px 20px;
+    right: 0px;
+    border: 1px solid;
+    border-color: darkblue;
+    margin-left: 70px;
+    text-align: center;
+    display: flex;
+    flex-flow: column;
+    padding: 32px;
+}
+
+.menu.is-open {
+    opacity: 1;
+    transform: translateY(0);
+    margin-left: 58px;
+} */

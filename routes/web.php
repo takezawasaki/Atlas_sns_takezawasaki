@@ -20,14 +20,15 @@
 
 
 //ログアウト中のページ
-Route::get('/login', 'Auth\LoginController@login');
-Route::post('/login', 'Auth\LoginController@login');
+Route::get('/login', 'Auth\LoginController@login')->name('login');
+Route::post('/login', 'Auth\LoginController@login')->name('login');
 
 Route::get('/register', 'Auth\RegisterController@register');
 Route::post('/register', 'Auth\RegisterController@register');
 
 Route::get('/added', 'Auth\RegisterController@added');
 Route::post('/added', 'Auth\RegisterController@added');
+
 
 //ログイン中のページ
 Route::get('/top','PostsController@index');

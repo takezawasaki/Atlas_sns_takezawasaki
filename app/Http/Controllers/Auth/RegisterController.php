@@ -46,14 +46,17 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    protected function validator(array $data)
-    {
-        return Validator::make($data, [
-            'username' => 'required|string|max:255',
-            'mail' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:4|confirmed',
-        ]);
-    }
+    // protected function validator(array $data)
+    // { if($validator->fails()){
+    //     return redirect()->back()
+    //     ->withInput()
+    //     ->withErrors($validator);}
+    //     return Validator::make($data, [
+    //         'username' => 'required|string|max:255',
+    //         'mail' => 'required|string|email|max:255|unique:users',
+    //         'password' => 'required|string|min:4|confirmed',
+    //     ]);
+    // }
 
     /**
      * Create a new user instance after a valid registration.
@@ -75,12 +78,26 @@ class RegisterController extends Controller
     //     return view("auth.register");
     // }
 
+
     public function register(Request $request){
         if($request->isMethod('post')){
             $data = $request->input();
+$rules=[ 'username' => 'required|string|min:2|max:12',
+            'mail' => 'required|string|email|min:5|max:40|unique:users',
+            'password' => 'required|string|min:8|max:20|alpha_num|confirmed',
+            'password_confirmation' => 'required|string|min:8|max:20|alpha_num',
+        ];
 
-            $this->create($data);
-            return redirect('added');
+        $validator=Validator::make($data, $rules);
+     if($validator->fails()){
+        return redirect('/register')
+        ->withErrors($validator)
+        ->withInput();
+        }
+
+            $username = $this->create($data);
+            $user = $request -> get('username');
+            return redirect('/added')->with('username',$user);
         }
         return view('auth.register');
     }
