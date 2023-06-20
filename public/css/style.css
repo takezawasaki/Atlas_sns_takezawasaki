@@ -13,6 +13,7 @@ body {
 header {
     padding: 10px;
     background: #186AC9;
+    display: block;
 
 }
 
@@ -35,12 +36,16 @@ p {
     justify-content: space-between;
     align-items: center;
     position: relative;
+    text-align: center;
+    width: 100%;
+    /* padding: 0.5%; */
 
 }
 
 .side_user {
     display: flex;
     justify-content: center;
+    /* position: absolute; */
 }
 
 /* #head {
@@ -69,6 +74,7 @@ p {
     border-top: none;
     outline: 0;
     cursor: pointer;
+    /* justify-content: space-between; */
 }
 
 /* .accordion-container .accordion-title {
@@ -82,12 +88,32 @@ p {
     padding-left: 50px;
 } */
 
-.accordion-title {
-    display: flex;
-    position: absolute;
+.accordion {
+    display: none;
+    /* position: absolute; */
 }
 
-.accordion-title::after {
+.accordion-title {
+    display: inline-block;
+    vertical-align: middle;
+    color: #f7ecf1;
+    line-height: 1;
+    width: 0.5em;
+    height: 0.5em;
+    border: 0.1em solid currentColor;
+    border-left: 0;
+    border-bottom: 0;
+    box-sizing: border-box;
+    transform: translateY(-25%) rotate(135deg);
+    /* justify-content: space-between; */
+}
+
+.accordion-title.open {
+    /* 開いている時 */
+    transform: translateY(-25%) rotate(-45deg);
+}
+
+/* .accordion::after {
     content: "";
     right: 40px;
     position: absolute;
@@ -95,7 +121,7 @@ p {
     width: 8px;
     height: 8px;
     border-top: solid 2px #fff;
-}
+} */
 
 /* display: block; */
 
@@ -124,9 +150,9 @@ p {
     display: flex;
     flex-flow: column;
     padding: 32px;
-}
+} */
 
-.menu.is-open {
+/* .menu.is-open {
     opacity: 1;
     transform: translateY(0);
     margin-left: 58px;

@@ -8,6 +8,9 @@
     <title></title>
     <link rel="stylesheet" href="{{ asset('css/reset.css') }} ">
     <link rel="stylesheet" href="{{ asset('css/style.css') }} ">
+    <!-- bootstamp -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <!--スマホ,タブレット対応-->
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <!--サイトのアイコン指定-->
@@ -26,15 +29,18 @@
         <div class=side_user>
                 <div  class="accordion-container">
                     <p>{{ Auth::user()->username }}さん </p>
-                    <div class="accordion accordion-title"></div>
                 </div>
-                <ul class="menu">
+                <div class="accordion-title"></div>
+                <div class="accordion">
+                    <ul class="menu">
                     <li><a class="home" href="/top">ホーム</a></li>
                     <li><a class="profile" href="/profile">プロフィール</a></li>
                     <li><a  class="center" href="/logout">ログアウト</a></li>
-                </ul>
-                <div class="icon">
-                <img src="images/icon1.png"></div>
+                    </ul>
+                </div>
+            <div class="icon">
+                <img src="images/icon1.png">
+            </div>
         </div>
     </div>
     </header>
@@ -55,7 +61,7 @@
                 <p>フォロワー数</p>
                 <p>〇〇名</p>
                 </div>
-                <p class="btn"><a href="">フォロワーリスト</a></p>
+                <p class="btn"><i class="bi bi-trash3-fill"></i><a href="">フォロワーリスト</a></p>
             </div>
             <p class="btn"><a href="">ユーザー検索</a></p>
         </div>
