@@ -35,6 +35,7 @@
                     <ul class="menu">
                     <li><a class="home" href="/top">ホーム</a></li>
                     <li><a class="profile" href="/profile">プロフィール</a></li>
+
                     <li><a  class="center" href="/logout">ログアウト</a></li>
                     </ul>
                 </div>
@@ -54,12 +55,12 @@
                 <p>{{Auth::user()->username}}さんの</p>
                 <div>
                 <p>フォロー数</p>
-                <p>〇〇名</p>
+                <p>{{Auth::user()->follows()->count()}}名</p>
                 </div>
                 <p class="btn"><a href="">フォローリスト</a></p>
                 <div>
                 <p>フォロワー数</p>
-                <p>〇〇名</p>
+                <p>{{Auth::user()->followers()->count()}}名</p>
                 </div>
                 <p class="btn"><i class="bi bi-trash3-fill"></i><a href="">フォロワーリスト</a></p>
             </div>

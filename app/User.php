@@ -26,4 +26,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    // フォローしている数
+    // first()の返り値はModelのオブジェクト
+    // booleanで判定
+    public function isFollowing(Int $user_id){
+        return(boolean)$this->follows()->where('followed_id',$user_id)->first(['follows.id']);
+    }
+    // フォローされてる数
+    public function isFollowed(Int $user_id){
+        return(boolean)$this->followers()->where('following_id',$user_id)->first(['follows.id']);
+    }
 }
