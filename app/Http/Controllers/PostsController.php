@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\post;
 
 class PostsController extends Controller
 {
@@ -21,4 +22,10 @@ public function __construct()
         $username = Auth::user()->username;
         return view('posts.index');
     }
+        public function posts()
+    {
+        $posts = Post::get(); //Postモデル（postsテーブル）からレコード情報を取得
+        return view('posts.index',['posts'=>$posts]);
+    }
 }
+

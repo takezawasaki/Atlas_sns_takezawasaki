@@ -33,15 +33,5 @@ public function show(User $user){
         'follower_count'=>$follower_count
     ]);
 }
-// usersテーブルの同一テーブル内多対多リレーション
-    // フォロー数
-    public function follows(){
-        return $this->belongsToMany(User::class,'followers','following_id','followed_id')->WhileTimestamps();
 
-    }
-    // フォロワー数
-    public function followers(){
-        return $this->belongsToMany(User::class,'followers','followed_id','following_id')->WhileTimestamps();
-
-    }
 }

@@ -26,6 +26,20 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    // usersテーブルの同一テーブル内多対多リレーション
+    //    belongstomanyに関係する相手のモデル：第１引数　第２引数：中間するテーブル名　第3引数：自分のカラム　第４引数：相手のカラム
+    //
+    // フォロー数
+    public function follows(){
+        return $this->belongsToMany(User::class,'follows','following_id','followed_id');
+
+    }
+    // フォロワー数
+    public function followers(){
+        return $this->belongsToMany(User::class,'follows','followed_id','following_id');
+
+    }
     // フォローしている数
     // first()の返り値はModelのオブジェクト
     // booleanで判定
@@ -36,4 +50,10 @@ class User extends Authenticatable
     public function isFollowed(Int $user_id){
         return(boolean)$this->followers()->where('following_id',$user_id)->first(['follows.id']);
     }
+
+    //「１対多」の「多」側 → メソッド名は複数形でhasManyを使う
+    public function posts(){
+        return $this->hasMany('App\Post');
+    }
 }
+

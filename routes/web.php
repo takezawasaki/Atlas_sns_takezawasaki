@@ -40,13 +40,7 @@ Route::get('/profile','UsersController@profile');
 
 Route::get('/search','UsersController@index');
 
-// Route::get('/user','FollowsController@follows');
-// Route::get('/user','FollowsController@followers');
-
-Route::get('/top','FollowsController@follows');
-Route::post('/top','FollowsController@follows');
-Route::get('/top','FollowsController@followers');
-Route::post('/top','FollowsController@followers');
+Route::get('/index','PostsController@posts');
 
 Route::get('/follow-list','PostsController@index');
 Route::get('/follower-list','PostsController@index');
