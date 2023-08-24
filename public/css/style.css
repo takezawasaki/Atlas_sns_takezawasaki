@@ -15,21 +15,23 @@ header {
     background: #186AC9;
     /* display: block; */
     display: flex;
+    justify-content: space-around;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 50px;
+    height: 10%;
     padding: 25px;
 }
 
-header img {
+img {
     width: 50px;
 }
 
 h1 img {
     /* padding: 20px; */
     width: 100px;
+    margin-left: 5px;
 }
 
 img {
@@ -66,20 +68,20 @@ p {
     -webkit-justify-content: space-around;
     justify-content: space-around;
     align-items: center;
+    margin-left: 900px;
+    margin-right: 5px;
     /* padding: 0.5%; */
     /* position: relative; */
-    text-align: right;
+    /* text-align: right; */
     /* position: absolute; */
 }
 
-/* #head {
-    align-items: center;
-    position: relative;
-} */
 
 #row {
     display: flex;
     flex-flow: row wrap;
+    z-index: 100;
+    line-height: 2.0;
 }
 
 #container {
@@ -98,23 +100,17 @@ p {
     border-top: none;
     outline: 0;
     cursor: pointer;
-    /* justify-content: space-between; */
+    margin-right: 15px;
 }
 
-/* .accordion-container .accordion-title {
-    display: flex;
-    position: absolute;
-    font-size: 1.25rem;
-    font-weight: normal;
-    color: #fff;
-    width: 50px;
-    height: 17px;
-    padding-left: 50px;
-} */
+.accordion-container p {
+    height: 4%;
+    width: 100px;
+}
 
 .accordion {
     display: none;
-    /* position: absolute; */
+    /* position: relative; */
 }
 
 .accordion-title {
@@ -122,13 +118,14 @@ p {
     vertical-align: middle;
     color: #f7ecf1;
     line-height: 1;
-    width: 0.5em;
+    width: 0.8em;
     height: 0.5em;
     border: 0.1em solid currentColor;
     border-left: 0;
     border-bottom: 0;
     box-sizing: border-box;
     transform: translateY(-25%) rotate(135deg);
+    margin: 0px 10px 0px 5px;
     /* justify-content: space-between; */
 }
 
@@ -137,47 +134,156 @@ p {
     transform: translateY(-25%) rotate(-45deg);
 }
 
-/* .accordion::after {
-    content: "";
-    right: 40px;
-    position: absolute;
-    top: 3%;
-    width: 8px;
-    height: 8px;
-    border-top: solid 2px #fff;
-} */
-
-/* display: block; */
-
-
-
 /* a:hover {
     color: #186AC9;
 } */
 
-/* .menu {
-    position: absolute;
-    top: 51px;
-    width: 20px;
-    height: 80px;
+.accordion-menu {
     background-color: #fff;
-    opacity: 0;
-    transition: .3s;
-    pointer-events: none;
-    transform: translateY(-30px);
-    padding: 10px 10px 20px;
     right: 0px;
-    border: 1px solid;
+    border: 2px solid;
     border-color: darkblue;
-    margin-left: 70px;
+    margin-top: 320px;
+    height: 250px;
+    width: 300px;
+    padding-left: 0;
+}
+
+.accordion-menu li {
+    /* justify-content: space-between; */
+    height: 33%;
     text-align: center;
-    display: flex;
-    flex-flow: column;
-    padding: 32px;
-} */
+    border: 2px solid;
+    font-weight: bold;
+    /* display: inline-block; */
+    /* opacity: 0; */
+    /* transition: .3s;
+    pointer-events: none;
+    margin: 0 auto; */
+    /* transform: translateY(-30px); */
+}
+
+.accordion-menu a {
+    color: #727272;
+}
+
+.accordion-menu a:hover {
+    color: #fff;
+}
+
+.accordion-menu li:hover {
+    background: #186AC9;
+    color: #fff;
+}
 
 /* .menu.is-open {
     opacity: 1;
     transform: translateY(0);
     margin-left: 58px;
 } */
+/* 投稿フォーム エリア*/
+.post-container {
+    height: 500px;
+    width: 750px;
+    position: absolute;
+}
+
+.form {
+    height: 200px;
+    /* position: relative; */
+}
+
+.new-post {
+    /* display: flex; */
+    position: relative;
+}
+
+.post-icon {
+    padding-top: 9.5%;
+}
+
+.post {
+    height: 20px;
+    padding: 50px;
+    width: 750px;
+}
+
+.post-image {
+    /* position: absolute; */
+    height: 80px;
+    padding-left: 700px;
+}
+
+.table-hover {
+    border-bottom: #727272;
+}
+
+/* モーダル機能 */
+.content {
+    margin: 0 auto;
+    padding: 40px;
+}
+
+.modal {
+    display: none;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.modal__bg {
+    background: rgba(0, 0, 0, 0.8);
+    height: 100vh;
+    position: absolute;
+    width: 100%;
+}
+
+.modal__content {
+    background: #fff;
+    left: 50%;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+}
+
+.search {
+    padding: 100px;
+    height: 50px;
+    /* width: 100px; */
+    display: flex;
+}
+
+.search.input {
+    display: flex;
+    padding-left: 50px;
+}
+
+.search-key {
+    color: black;
+
+}
+
+/* 検索結果*/
+.user-list {
+    padding-left: 350px;
+    align-items: space-between;
+}
+
+.button {
+    color: deepskyblue;
+
+
+}
+
+.unfollow-button {
+    color: white;
+
+}
+
+.follow-button {
+    color: white;
+
+}

@@ -20,6 +20,6 @@ class Follow extends Model
 
     }
 
- 
+
 
 }

@@ -32,14 +32,14 @@
                 </div>
                 <div class="accordion-title"></div>
                 <div class="accordion">
-                    <ul class="menu">
-                    <li><a class="home" href="/top">ホーム</a></li>
+                    <ul class="accordion-menu">
+                    <li><a class="home" href="/top">HOME</a></li>
                     <li><a class="profile" href="/profile">プロフィール</a></li>
 
                     <li><a  class="center" href="/logout">ログアウト</a></li>
                     </ul>
                 </div>
-            <div class="icon">
+            <div class="user-icon">
                 <img src="images/icon1.png">
             </div>
         </div>

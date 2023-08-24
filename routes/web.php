@@ -36,11 +36,18 @@ Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 //ログイン中のページ
 Route::get('/top','PostsController@index');
 
+Route::post('/post/create','PostsController@Create');
+Route::post('/post/store','PostsController@store')->name('post.store');
+Route::post('/post/update','PostsController@update');
+Route::get('/post/{id}/delete','PostsController@delete');
+
+
 Route::get('/profile','UsersController@profile');
 
-Route::get('/search','UsersController@index');
+Route::get('/search','UsersController@search')->name('users.search');
 
-Route::get('/index','PostsController@posts');
-
-Route::get('/follow-list','PostsController@index');
+Route::get('/follow-list','FollowsController@followList');
 Route::get('/follower-list','PostsController@index');
+
+Route::post('/search/{user}/follow','FollowsController@follow')->name('follow');
+Route::post('/search/{user}/unfollow','FollowsController@unfollow')->name('unfollow');

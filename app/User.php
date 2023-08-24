@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'username', 'mail', 'password',
+        'username', 'mail', 'password','post','user_id'
     ];
 
     /**
@@ -40,6 +40,15 @@ class User extends Authenticatable
         return $this->belongsToMany(User::class,'follows','followed_id','following_id');
 
     }
+// フォローする
+    public function follow($user_id){
+    return $this->follows()->attach($user_id);
+}
+// フォロー解除
+public function unfollow($user_id){
+    return $this->follows()->detach($user_id);
+}
+
     // フォローしている数
     // first()の返り値はModelのオブジェクト
     // booleanで判定
@@ -56,4 +65,6 @@ class User extends Authenticatable
         return $this->hasMany('App\Post');
     }
 }
+
+
 
