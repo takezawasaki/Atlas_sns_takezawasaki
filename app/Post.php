@@ -8,7 +8,7 @@ class Post extends Model
 {
 protected $fillable = [
     'post',
-    'user_id','updated_at'
+    'user_id'
     ];
     //リレーション定義を追加
     //「１対多」の「1」側 → メソッド名は単数形でbelongsToを使う

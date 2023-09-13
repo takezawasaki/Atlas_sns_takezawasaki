@@ -38,25 +38,17 @@
             {{ Form::input('text' , 'new-post',null, ['required', 'class' => 'post', 'placeholder' => '投稿内容を記述してください']) }}
         </div>
         <input type="image" class="post-image" src="images/post.png" ></input>
-        {!! Form::close() !!}
+     {!! Form::close() !!}
      </div>
     <table class="table-hover">
-      <tr>
-                <th>No</th>
-                <th>name</th>
-                <th>投稿内容</th>
-                <th>登録日</th>
-                <th>更新日</th>
-                <th></th>
-            </tr>
             @foreach($posts as $post)
             <tr>
                 <td>{{ $post->user->user_id }}</td>
-                <td>{{ $post->user->
-                  ->username }}</td>
+                <td>{{ $post->images }}</td>
+                <td>{{ $post->user->username }}</td>
                 <td>{{ $post->post}}</td>
-                <td>{{ $post->created_at }}</td>
-                <td>{{ $post->updated_at }}</td>
+                <small><td>{{ $post->created_at }}</td></small>
+                <small><td>{{ $post->updated_at }}</td></small>
                 <!--編集 -->
                 @if(($post->user_id ==Auth::user()->id))
                 <td><div class="new-contents"><a class="js-modal-open" href="" post="{{ $post->post }}" post_id="{{$post->id }}"><img src="./images/edit.png" alt="編集"></a></div></td>

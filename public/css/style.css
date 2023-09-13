@@ -29,7 +29,6 @@ img {
 }
 
 h1 img {
-    /* padding: 20px; */
     width: 100px;
     margin-left: 5px;
 }
@@ -51,14 +50,6 @@ p {
     justify-content: space-between;
     align-items: center;
     vertical-align: middle;
-    /* position: fixed; */
-    /* position: relative;
-    text-align: center;
-    width: 100%;
-    top: 0;
-    left: 0;
-    height: 100px; */
-    /* padding: 0.5%; */
 
 }
 
@@ -70,10 +61,6 @@ p {
     align-items: center;
     margin-left: 900px;
     margin-right: 5px;
-    /* padding: 0.5%; */
-    /* position: relative; */
-    /* text-align: right; */
-    /* position: absolute; */
 }
 
 
@@ -150,17 +137,10 @@ p {
 }
 
 .accordion-menu li {
-    /* justify-content: space-between; */
     height: 33%;
     text-align: center;
     border: 2px solid;
     font-weight: bold;
-    /* display: inline-block; */
-    /* opacity: 0; */
-    /* transition: .3s;
-    pointer-events: none;
-    margin: 0 auto; */
-    /* transform: translateY(-30px); */
 }
 
 .accordion-menu a {
@@ -176,21 +156,16 @@ p {
     color: #fff;
 }
 
-/* .menu.is-open {
-    opacity: 1;
-    transform: translateY(0);
-    margin-left: 58px;
-} */
 /* 投稿フォーム エリア*/
 .post-container {
-    height: 500px;
-    width: 750px;
+    /* height: 500px;
+    width: 750px; */
     position: absolute;
 }
 
 .form {
     height: 200px;
-    /* position: relative; */
+    border-bottom: #727272 solid 1rem;
 }
 
 .new-post {
@@ -216,6 +191,19 @@ p {
 
 .table-hover {
     border-bottom: #727272;
+    width: 100%;
+    padding: 15px;
+}
+
+td {
+    list-style: none;
+    border-bottom: 1px solid #000;
+    display: flex;
+}
+
+.table-hover>td {
+    display: flex;
+    justify-content: space-between;
 }
 
 /* モーダル機能 */

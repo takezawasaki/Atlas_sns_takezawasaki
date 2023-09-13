@@ -19,10 +19,15 @@ public function __construct()
     {
         // ログイン認証しているユーザーをuserテーブルから情報取得
         $user = Auth::user();
+        // dd($user);
+        $posts=Post::get();
+        // Pluckで取り出し
         $following_id= auth()->user()->follows()->pluck('followed_id');
     
         //Postモデル（postsテーブル）からレコード情報を取得
+        // Wherein で指定　orWhere でもしくは一致する場合
         $posts = Post::orderBy('created_at','desc')->with('user')->whereIn('user_id',$following_id)->orWhere('user_id','id')->get();
+        // dd($posts);
         return view('posts.index',['user'=>$user,'posts'=>$posts]);
     }
 // 投稿機能
@@ -32,10 +37,9 @@ public function __construct()
             'new-post' => 'required|unique:posts,post|max:150',
         ]);
         $post = $request->input('new-post');
-        $user_id=Auth::id();
-        Post::create([
+        \DB::table('posts')->insert([
             'post' => $post,
-            'user_id'=>$user_id
+            'user_id'=> auth()->user()->id
         ]);
         return redirect('/top');
     } 

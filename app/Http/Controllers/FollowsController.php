@@ -18,8 +18,9 @@ class FollowsController extends Controller
         // ログインユーザーが誰をフォローしているのか
         $following_id= auth()->user()->follows()->pluck('followed_id');
         // user_id',following_idで投稿ユーザーが同じものから昇順で表示
-        $posts=Post::with('user')->whereIn('user_id',$following_id)->orWhere('user_id','id')->latest()->get();
+        $posts=Post::with('user')->whereIn('user_id',$following_id)->latest()->get();
         return view('follows.followList',['follows'=>$follows,'post'=>$posts]);
+        dd($posts);
     }
     // フォロワーリスト
     public function followerList(){

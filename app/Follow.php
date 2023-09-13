@@ -21,5 +21,4 @@ class Follow extends Model
     }
 
 
-
 }
